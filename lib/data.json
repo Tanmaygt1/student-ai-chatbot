@@ -1,0 +1,272 @@
+{
+  "_meta": {
+    "owner": "Tanmay",
+    "last_updated": "2026-04-26",
+    "source": "https://www.vit.edu",
+    "note": "Live data fetched from VIT official website. Run `npm run scrape` to refresh."
+  },
+  "college": {
+    "name": "Vishwakarma Institute of Technology",
+    "short_name": "VIT Pune",
+    "established": "1 September 1983",
+    "founder": "Shri Rajkumarjee Agarwal",
+    "location": "666, Upper Indiranagar, Bibwewadi, Pune - 411037",
+    "affiliation": "Savitribai Phule Pune University (SPPU)",
+    "autonomous_since": "2008-09",
+    "autonomous_valid_till": "2030",
+    "accreditation": "NAAC A+",
+    "status": "First private, self-financed autonomous engineering college in Maharashtra (2008)",
+    "website": "https://www.vit.edu",
+    "email": "info@vit.edu",
+    "tpo_email": "tpo@vit.edu",
+    "phone": "+91-20-24228258",
+    "tpo_phone": "+91 73859 91260",
+    "principal_email": "principal@vit.edu",
+    "vision": "To be a globally acclaimed Institute in Technical Education and Research for holistic socio-economic development.",
+    "mission": "To ensure that 100% of students are employable and employed in industry, higher studies, entrepreneurship, civil or defence services, government jobs, and other areas."
+  },
+  "departments": {
+    "computer engineering": {
+      "full_name": "B.Tech Computer Engineering",
+      "code": "CE",
+      "url": "https://www.vit.edu/computer/",
+      "duration": "4 years",
+      "seats": 120,
+      "eligibility": "12th PCM with min 50% (45% for reserved category)",
+      "highlights": ["Data Structures & Algorithms", "Operating Systems", "Computer Networks", "Database Systems", "Machine Learning", "Cloud Computing", "Cyber Security"],
+      "labs": ["Programming Lab", "Networks Lab", "AI/ML Lab", "Project Lab"],
+      "about": "One of VIT's flagship departments. Strong industry connections, active coding clubs, and excellent placement record."
+    },
+    "computer engineering (software engineering)": {
+      "full_name": "B.Tech Computer Engineering (Software Engineering)",
+      "code": "CE-SE",
+      "url": "https://www.vit.edu/CE-Software-Engineering/",
+      "duration": "4 years",
+      "seats": 60,
+      "eligibility": "12th PCM with min 50%",
+      "highlights": ["Software Engineering", "Agile Development", "DevOps", "Full Stack Development", "Cloud Architecture"],
+      "about": "Specialized branch focused on software development lifecycle, agile methods, and industry-ready engineering practices."
+    },
+    "computer science and engineering (ai)": {
+      "full_name": "B.Tech Computer Sciences & Engineering (AI)",
+      "code": "CSE-AI",
+      "url": "https://www.vit.edu/CSE-AI/",
+      "duration": "4 years",
+      "seats": 60,
+      "eligibility": "12th PCM with min 50%",
+      "highlights": ["Artificial Intelligence", "Deep Learning", "Computer Vision", "NLP", "Reinforcement Learning"],
+      "about": "Cutting-edge program integrating core CS with advanced AI specializations."
+    },
+    "computer science and engineering (ai & ml)": {
+      "full_name": "B.Tech Computer Science and Engineering (AI & ML)",
+      "code": "CSE-AIML",
+      "url": "https://www.vit.edu/CSE-AI-ML/",
+      "duration": "4 years",
+      "seats": 60,
+      "eligibility": "12th PCM with min 50%",
+      "highlights": ["Machine Learning", "AI Fundamentals", "Python", "Data Engineering", "MLOps"],
+      "about": "Program combining CS fundamentals with AI and Machine Learning specialization."
+    },
+    "computer science and engineering (data science)": {
+      "full_name": "B.Tech Computer Science and Engineering (Data Science)",
+      "code": "CS-DS",
+      "url": "https://www.vit.edu/CS-Data-Science/",
+      "duration": "4 years",
+      "seats": 60,
+      "eligibility": "12th PCM with min 50%",
+      "highlights": ["Data Science", "Statistics", "Big Data", "Data Visualization", "Business Intelligence"],
+      "about": "Focused on data analysis, statistical computing, and modern data engineering pipelines."
+    },
+    "computer science and engineering (iot and cyber security)": {
+      "full_name": "B.Tech CSE (IoT and Cyber Security Including Blockchain Technology)",
+      "code": "CSE-IoT-CS",
+      "url": "https://www.vit.edu/CSE-IoT-CS-BT/",
+      "duration": "4 years",
+      "seats": 60,
+      "eligibility": "12th PCM with min 50%",
+      "highlights": ["IoT", "Cyber Security", "Blockchain", "Embedded Systems", "Network Security"],
+      "about": "Specialized in connected systems, security, and blockchain technologies — one of the most in-demand branches."
+    },
+    "artificial intelligence and data science": {
+      "full_name": "B.Tech Artificial Intelligence & Data Science",
+      "code": "AIDS",
+      "url": "https://www.vit.edu/AIDSC/",
+      "duration": "4 years",
+      "seats": 60,
+      "eligibility": "12th PCM with min 50%",
+      "highlights": ["AI", "Data Science", "Deep Learning", "Python", "Analytics"],
+      "about": "Interdisciplinary program at the intersection of artificial intelligence and data engineering."
+    },
+    "information technology": {
+      "full_name": "B.Tech Information Technology",
+      "code": "IT",
+      "url": "https://www.vit.edu/IT/",
+      "duration": "4 years",
+      "seats": 120,
+      "eligibility": "12th PCM with min 50%",
+      "highlights": ["Web Technologies", "Database Management", "Software Testing", "System Administration", "Networking"],
+      "about": "Strong focus on practical IT skills with industry-driven curriculum."
+    },
+    "electronics and telecommunication": {
+      "full_name": "B.Tech Electronics and Telecommunication Engineering",
+      "code": "E&TC",
+      "url": "https://www.vit.edu/E-TC/",
+      "duration": "4 years",
+      "seats": 120,
+      "eligibility": "12th PCM with min 50%",
+      "highlights": ["VLSI", "Signal Processing", "Embedded Systems", "Communication Systems", "IoT"],
+      "about": "One of VIT's oldest departments with strong research output and industry ties."
+    },
+    "mechanical engineering": {
+      "full_name": "B.Tech Mechanical Engineering",
+      "code": "MECH",
+      "url": "https://www.vit.edu/mechanical/",
+      "duration": "4 years",
+      "seats": 120,
+      "eligibility": "12th PCM with min 50%",
+      "highlights": ["CAD/CAM", "Robotics", "Thermodynamics", "Manufacturing Technology", "Finite Element Analysis"],
+      "about": "Comprehensive mechanical engineering program with strong lab infrastructure and core industry placements."
+    },
+    "civil engineering": {
+      "full_name": "B.Tech Civil Engineering",
+      "code": "CIVIL",
+      "url": "https://www.vit.edu/CIVIL/",
+      "duration": "4 years",
+      "seats": 60,
+      "eligibility": "12th PCM with min 50%",
+      "highlights": ["Structural Engineering", "Construction Management", "AutoCAD", "Environmental Engineering"],
+      "about": "Strong infrastructure and practitioner faculty from industry."
+    },
+    "chemical engineering": {
+      "full_name": "B.Tech Chemical Engineering",
+      "code": "CHEM",
+      "url": "https://www.vit.edu/chemical/",
+      "duration": "4 years",
+      "seats": 60,
+      "eligibility": "12th PCM with min 50%",
+      "highlights": ["Process Engineering", "Thermodynamics", "Fluid Mechanics", "Chemical Reaction Engineering"],
+      "about": "One of the few colleges in Pune offering a dedicated Chemical Engineering program."
+    },
+    "instrumentation engineering": {
+      "full_name": "B.Tech Instrumentation Engineering",
+      "code": "INSTRU",
+      "url": "https://www.vit.edu/instrumentation/",
+      "duration": "4 years",
+      "seats": 60,
+      "eligibility": "12th PCM with min 50%",
+      "highlights": ["Control Systems", "Process Instrumentation", "PLC/SCADA", "Sensors & Transducers"],
+      "about": "Niche program with excellent industry demand in automation and process control sectors."
+    }
+  },
+  "fees": {
+    "note": "Fees are per academic year. Subject to revision by SPPU/State Government. Always verify at https://www.vit.edu",
+    "tuition_fee_approx": "₹2,00,000 – ₹2,50,000 per year (varies by branch)",
+    "development_fee": "As per SPPU norms",
+    "hostel_boys": "Available on campus — contact admission office",
+    "hostel_girls": "Available on campus — contact admission office",
+    "total_approx": "₹8,00,000 – ₹10,00,000 (4 years total)",
+    "scholarships": "Government of Maharashtra scholarships available for SC/ST/OBC/EBC/SBC categories",
+    "fee_contact": "admission@vit.edu or +91-20-24228258",
+    "fee_details_url": "https://www.vit.edu/undergraduate/"
+  },
+  "admissions": {
+    "process": "Through MHT-CET / JEE Main scores via Maharashtra CAP (Centralized Admission Process)",
+    "authority": "State CET Cell, Maharashtra",
+    "brochure_url": "https://www.vit.edu/wp-content/uploads/2026/04/26-27_-VIT-Brochure-.pdf",
+    "notification_url": "https://www.vit.edu/notification/",
+    "admission_url": "https://www.vit.edu/undergraduate/",
+    "il_admission": "Institute Level (IL) seats available — apply directly to VIT",
+    "documents_required": [
+      "12th (HSC) Marksheet and Passing Certificate",
+      "10th (SSC) Marksheet",
+      "MHT-CET / JEE Score Card",
+      "CAP Allotment Letter",
+      "Domicile Certificate (Maharashtra)",
+      "Caste Certificate (if applicable)",
+      "Aadhar Card",
+      "Passport Size Photographs (6)",
+      "Gap Certificate (if applicable)"
+    ],
+    "eligibility": {
+      "general": "12th PCM with minimum 50% marks",
+      "reserved": "12th PCM with minimum 45% marks (SC/ST/OBC categories)",
+      "age": "Should have completed 17 years of age on or before 31st December of admission year"
+    },
+    "important_dates_2026": {
+      "mht_cet": "April–May 2026",
+      "cap_round_1": "July 2026",
+      "cap_round_2": "August 2026",
+      "il_admissions": "July–August 2026",
+      "classes_begin": "September 2026"
+    },
+    "enquiry_url": "https://www.vit.edu/enquiry-form/"
+  },
+  "placements": {
+    "source": "https://www.vit.edu/placement/",
+    "ay_2024_25": {
+      "highest_package": "₹45 LPA",
+      "median_salary": "₹9.5 LPA",
+      "placement_percentage": "86.3%",
+      "companies_visiting": "500+ companies every year",
+      "students_placed": "1500+ students annually"
+    },
+    "tpo": {
+      "name": "Prof. Karthick Subramanian Balasubramanian",
+      "designation": "Head, Central Training and Placement Office, Vishwakarma Institutes",
+      "mobile": "+91 73859 91260 / +91 98224 51260",
+      "email": "tpo@vit.edu"
+    },
+    "top_recruiters": ["TCS", "Infosys", "Wipro", "Cognizant", "Accenture", "Capgemini", "Amazon", "Flipkart", "KPIT Technologies", "Persistent Systems", "Barclays", "Deutsche Bank", "HSBC", "Cummins", "Emcure Pharmaceuticals", "Bajaj Auto"],
+    "recruiter_types": ["Mass Recruiters (IT/ITES)", "Core Companies (Mfg/Auto)", "Finance & Banking", "Product Companies", "Startups"],
+    "placement_url": "https://www.vit.edu/placement/"
+  },
+  "infrastructure": {
+    "campus": "Bibwewadi, Pune — urban campus with modern facilities",
+    "library": "Central Library with digital and physical resources",
+    "hostel": {
+      "boys": "On-campus hostel available",
+      "girls": "On-campus hostel available",
+      "details_url": "https://www.vit.edu/infrastructure/#hostel"
+    },
+    "labs": "Well-equipped labs for all departments with industry-standard tools",
+    "sports": "Cricket, Football, Basketball, Badminton, Table Tennis, Gymnasium",
+    "canteen": "College canteen with varied food options",
+    "wifi": "Campus-wide Wi-Fi connectivity",
+    "transport": "Well connected via PMPML buses; near Bibwewadi junction",
+    "infrastructure_url": "https://www.vit.edu/infrastructure/"
+  },
+  "examinations": {
+    "url": "https://www.vit.edu/examinations/",
+    "pattern": "VIT Pune is autonomous — conducts its own examinations",
+    "schedule_url": "https://www.vit.edu/examinations/",
+    "academic_calendar_url": "https://www.vit.edu/academics-calendar/",
+    "note": "Check https://www.vit.edu/examinations/ for latest exam timetables and notifications"
+  },
+  "research": {
+    "url": "https://www.vit.edu/research/",
+    "details": "Active research across all departments. Faculty and students engage in funded projects.",
+    "iqac_url": "https://www.vit.edu/iqac/"
+  },
+  "rankings": {
+    "url": "https://www.vit.edu/rankings-and-recognitions/",
+    "nirf_url": "https://www.vit.edu/nirf/",
+    "details": "Ranked among premier technical institutes in western India. Check official rankings page for current data."
+  },
+  "contact": {
+    "address": "666, Upper Indiranagar, Bibwewadi, Pune – 411037, Maharashtra, India",
+    "phone": "+91-20-24228258",
+    "email": "info@vit.edu",
+    "website": "https://www.vit.edu",
+    "enquiry_form": "https://www.vit.edu/enquiry-form/",
+    "map": "https://maps.google.com/?q=Vishwakarma+Institute+of+Technology+Pune",
+    "tpo": "tpo@vit.edu | +91 73859 91260"
+  },
+  "quick_links": {
+    "brochure": "https://www.vit.edu/wp-content/uploads/2026/04/26-27_-VIT-Brochure-.pdf",
+    "notifications": "https://www.vit.edu/notification/",
+    "announcements": "https://www.vit.edu/announcements/",
+    "alumni": "https://www.vit.edu/alumni/",
+    "international": "https://www.vishwakarmainternational.com/",
+    "exam_portal": "https://www.vit.edu/examinations/"
+  }
+}

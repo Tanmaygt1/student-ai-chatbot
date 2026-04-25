@@ -1,0 +1,192 @@
+╔══════════════════════════════════════════════════════════════╗
+║          VIT CHATBOT — COMPLETE SETUP GUIDE                 ║
+║          Author: Tanmay | Project: VIT Pune Assistant       ║
+╚══════════════════════════════════════════════════════════════╝
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PART 1: FIX THE API KEY (Windows)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Your old command "set GROK_API_KEY=..." didn't work because:
+  • "set" only sets the variable for that CMD session
+  • It disappears when you close CMD
+  • Our app now reads from .env.local file instead
+
+HOW TO GET THE KEY
+──────────────────
+1. Open browser → go to:  https://console.x.ai
+2. Sign up / Log in with your email
+3. In the left sidebar → click "API Keys"
+4. Click "Create API Key"
+5. Name it anything e.g. "vit-chatbot"
+6. COPY the key — it looks like:  xai-abc123xyz...
+   ⚠️  It's only shown ONCE. Copy it now!
+
+HOW TO SET THE KEY (correct way)
+──────────────────────────────────
+1. Open the file:   vit-chatbot\.env.local
+2. Find the line:   AI_API_KEY=xai-PASTE_YOUR_KEY_HERE
+3. Replace with:    AI_API_KEY=xai-YOUR_ACTUAL_KEY
+4. Save the file
+5. Restart the server:  npm run dev
+
+That's it. No more "set" commands needed!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PART 2: RUN LOCALLY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+In your project folder (where package.json is):
+
+  npm install          ← install packages (first time only)
+  npm run dev          ← start the server
+
+Open:  http://localhost:3000
+
+OPTIONAL: Refresh VIT live data (placements, announcements):
+  npm run scrape
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PART 3: PUSH TO GITHUB
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 1: Create GitHub account (if you don't have one)
+  → https://github.com/signup
+
+STEP 2: Install Git (if not installed)
+  → https://git-scm.com/download/win
+  (check "Git Bash" option during install)
+
+STEP 3: Create a new repo on GitHub
+  → https://github.com/new
+  Repository name: vit-chatbot
+  Visibility: Private  ← keeps your code private
+  DO NOT check "Add a README file"
+  Click "Create repository"
+
+STEP 4: Open CMD in your project folder and run:
+
+  git init
+  git add .
+  git commit -m "VIT Chatbot by Tanmay"
+  git branch -M main
+  git remote add origin https://github.com/YOUR_USERNAME/vit-chatbot.git
+  git push -u origin main
+
+  ← Replace YOUR_USERNAME with your GitHub username
+  ← GitHub will ask for your username + password
+     (Use a Personal Access Token as password:
+      GitHub → Settings → Developer Settings → Personal Access Tokens → Classic → Generate)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PART 4: DEPLOY TO VERCEL (FREE)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 1: Create Vercel account
+  → https://vercel.com/signup
+  → Sign up with GitHub (easiest)
+
+STEP 2: Import your project
+  → vercel.com/new
+  → Click "Import" next to your vit-chatbot repo
+
+STEP 3: Add your API key BEFORE deploying
+  In the "Environment Variables" section:
+    Name:   AI_API_KEY
+    Value:  xai-your-actual-key-here
+  Click "Add"
+
+STEP 4: Click "Deploy"
+
+Your chatbot will be live at:
+  https://vit-chatbot-xxxx.vercel.app
+
+STEP 5: Every time you push to GitHub, Vercel auto-redeploys!
+  git add .
+  git commit -m "Update data"
+  git push
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PART 5: ADD YOUR OWN DATA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+All VIT college data lives in:   lib/data.json
+
+To update fees:
+  Open data.json → find "fees" section → edit values
+
+To add timetable data:
+  Add a "timetable" key under the relevant department
+
+To add faculty:
+  Add a "faculty" array under the relevant department:
+  "faculty": [
+    { "name": "Dr. XYZ", "role": "HOD", "specialization": "AI" }
+  ]
+
+To refresh live data from vit.edu:
+  npm run scrape
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PART 6: FILE STRUCTURE EXPLAINED
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+vit-chatbot/
+├── app/
+│   ├── page.js              ← FRONTEND: The entire chat UI
+│   ├── layout.js            ← HTML wrapper (fonts, meta)
+│   ├── globals.css          ← Base CSS variables
+│   └── api/
+│       ├── chat/route.js    ← BACKEND: Receives messages, returns responses
+│       ├── clear/route.js   ← BACKEND: Clears session memory
+│       └── suggestions/route.js
+├── lib/
+│   ├── data.json            ← ALL VIT COLLEGE DATA (edit this!)
+│   ├── ai_client.js         ← AI API integration (internal, hidden from users)
+│   └── context.js           ← Session memory + query understanding
+├── scripts/
+│   └── scrape_vit.js        ← Fetches live data from vit.edu
+├── .env.local               ← YOUR API KEY (never commit this!)
+├── .gitignore               ← Excludes .env.local from GitHub
+├── vercel.json              ← Vercel deployment settings
+└── package.json             ← Project dependencies
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TROUBLESHOOTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Problem: "Cannot find module" error
+  Fix: Run   npm install
+
+Problem: Chat works but shows "📂 Data" badge (not AI)
+  Fix: Check .env.local — key must be exactly:  AI_API_KEY=xai-...
+       Make sure there are no spaces around the = sign
+
+Problem: "Module not found: lib/context.js" on Vercel
+  Fix: Make sure all files are committed:
+       git add .
+       git commit -m "Add all files"
+       git push
+
+Problem: Vercel build fails
+  Fix: Check Vercel logs (Dashboard → Deployments → click failed deploy)
+       Most common cause: missing Environment Variable AI_API_KEY
+
+Problem: git push asks for password
+  Fix: Use a Personal Access Token (not your GitHub password):
+       GitHub → Settings → Developer Settings →
+       Personal Access Tokens → Tokens (classic) → Generate new token
+       Select scope: "repo" → Generate → Copy → use as password
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+QUICK REFERENCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Get API Key:    https://console.x.ai
+GitHub:         https://github.com/new
+Vercel:         https://vercel.com/new
+VIT Website:    https://www.vit.edu
+
+Local:    npm run dev → http://localhost:3000
+Scrape:   npm run scrape
+Build:    npm run build

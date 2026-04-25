@@ -1,0 +1,13 @@
+/* globals.css — VIT Chatbot by Tanmay */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:#0a0e1a; --surface:#111827; --elevated:#1a2234;
+  --border:rgba(255,255,255,0.06); --border-hi:rgba(99,179,237,0.25);
+  --accent:#3B82F6; --accent-dim:rgba(59,130,246,0.1); --accent-glow:rgba(59,130,246,0.2); --accent-hi:#60a5fa;
+  --gold:#f59e0b; --gold-dim:rgba(245,158,11,0.1); --gold-border:rgba(245,158,11,0.25);
+  --text:#e2e8f0; --text-sec:#94a3b8; --text-mute:#475569;
+  --green:#22c55e; --red:#ef4444;
+  --r-sm:8px; --r-md:14px; --r-lg:20px; --r-xl:28px;
+  --font:'Plus Jakarta Sans',sans-serif; --mono:'DM Mono',monospace;
+}
+html,body,#__next{height:100%;font-family:var(--font);background:var(--bg);color:var(--text);overflow:hidden;}

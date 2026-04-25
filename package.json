@@ -1,0 +1,24 @@
+{
+  "name": "vit-chatbot",
+  "version": "1.0.0",
+  "description": "VIT Pune Student Chatbot by Tanmay",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "scrape": "node scripts/scrape_vit.js"
+  },
+  "dependencies": {
+    "next": "14.2.5",
+    "node-fetch": "^3.3.2",
+    "node-html-parser": "^6.1.13",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/node": "25.6.0",
+    "@types/react": "19.2.14",
+    "typescript": "6.0.3"
+  }
+}
