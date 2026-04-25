@@ -3,9 +3,6 @@
   "buildCommand": "next build",
   "outputDirectory": ".next",
   "installCommand": "npm install",
-  "env": {
-    "AI_API_KEY": "@ai_api_key"
-  },
   "functions": {
     "app/api/**": {
       "maxDuration": 15
