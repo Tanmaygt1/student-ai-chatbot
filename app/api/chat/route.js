@@ -76,8 +76,10 @@ function getRelevantData(topic, dept) {
       break;
 
     case 'hostel':
+    case 'hostel':
     case 'facilities':
       out.infrastructure = VIT_DATA.infrastructure;
+      out.student_life = VIT_DATA.student_life;
       break;
 
     case 'contact':
@@ -116,6 +118,10 @@ function getRelevantData(topic, dept) {
       if (dept && VIT_DATA.cutoffs_mhtcet?.ay_2024_25_approx?.[dept]) {
         out.specific_cutoff = { department: dept, cutoff: VIT_DATA.cutoffs_mhtcet.ay_2024_25_approx[dept] };
       }
+      break;
+      case 'faq':
+      out.faq = VIT_DATA.faq;
+      out.college = VIT_DATA.college;
       break;
 
     default:

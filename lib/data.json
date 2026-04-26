@@ -515,6 +515,41 @@
     "enquiry_form": "https://www.vit.edu/enquiry-form/",
     "map": "https://maps.google.com/?q=Vishwakarma+Institute+of+Technology+Bibwewadi+Pune"
   },
+  "student_life": {
+  "clubs": [
+    "IEEE Student Branch",
+    "CSI (Computer Society of India) Student Chapter",
+    "ISTE Student Chapter",
+    "Rotaract Club",
+    "NSS (National Service Scheme)",
+    "Cultural Committee — Utkarsha (annual fest)",
+    "Sports Committee",
+    "E-Cell (Entrepreneurship Cell)",
+    "Coding Club",
+    "Robotics Club"
+  ],
+  "annual_fest": "Utkarsha — VIT Pune's annual cultural and technical festival",
+  "sports_achievements": "Students represent VIT at inter-university and national level competitions",
+  "mentorship": "Faculty mentorship program — each student assigned a faculty mentor",
+  "anti_ragging": "Strict anti-ragging policy. Helpline: 1800-180-5522"
+},
+
+"alumni_notable": {
+  "note": "VIT Pune alumni are placed across top global companies and startups",
+  "companies": ["Microsoft", "Google", "Amazon", "NVIDIA", "Persistent Systems", "KPIT", "Barclays", "Deutsche Bank"],
+  "alumni_url": "https://www.vit.edu/alumni/"
+},
+
+"faq": {
+  "is_vit_pune_same_as_vit_vellore": "No. VIT Pune (Vishwakarma Institute of Technology) is a completely separate college from VIT Vellore (Vellore Institute of Technology). They are different institutes with no affiliation.",
+  "is_there_management_quota": "No. VIT Pune does not have a management quota. All admissions are purely merit-based through MHT-CET/JEE CAP process or Institute Level (IL) quota on merit.",
+  "is_college_autonomous": "Yes. VIT Pune is autonomous since AY 2008-09 — the first private autonomous engineering college in Maharashtra. It conducts its own exams independent of SPPU.",
+  "naac_grade": "NAAC A++ — 3rd consecutive cycle, CGPA 3.65/4.0, valid till 2031.",
+  "hostel_availability": "Hostel seats are limited and allotted on first-come-first-served basis. Many students stay in private PGs near Bibwewadi.",
+  "nearest_railway_station": "Pune Junction (approx. 5 km). Well connected by PMPML buses.",
+  "dress_code": "No strict dress code. Smart/casual wear expected.",
+  "total_seats": "3720 FY B.Tech seats + 366 DSE lateral entry seats across 14 programs."
+},
 
   "quick_links": {
     "brochure_2026_27": "https://www.vit.edu/wp-content/uploads/2026/04/26-27_-VIT-Brochure-.pdf",
