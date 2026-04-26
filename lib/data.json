@@ -422,11 +422,15 @@
       "digital": "NPTEL access, e-journals, digital resources"
     },
     "hostel": {
-      "boys": "On-campus hostel available (limited seats — first-come-first-served)",
-      "girls": "On-campus hostel available (limited seats)",
-      "note": "Many students opt for private PGs/flats in Bibwewadi area nearby",
-      "url": "https://www.vit.edu/infrastructure/#hostel"
-    },
+  "boys": "On-campus hostel available (limited seats — first-come-first-served)",
+  "girls": "On-campus hostel available (limited seats — first-come-first-served)",
+  "rooms": "Shared rooms (2-3 students per room)",
+  "fees_approx": "Approximately ₹80,000–₹1,00,000 per year (inclusive of mess charges). Exact fees vary by room type.",
+  "facilities_included": ["Mess/Canteen", "24x7 Security", "Wi-Fi", "Common Room", "Laundry"],
+  "note": "Hostel seats are limited. Apply early after admission confirmation. Many students opt for private PGs near Bibwewadi at ₹6,000–₹12,000/month.",
+  "pg_area": "Bibwewadi, Katraj, and Dhankawadi areas have many affordable PG options near VIT",
+  "url": "https://www.vit.edu/infrastructure/#hostel"
+},
     "canteen": "On-campus canteen with varied vegetarian and non-vegetarian options",
     "sports": "Cricket, Football, Basketball, Badminton, Table Tennis, Gymnasium",
     "wifi": "Campus-wide high-speed Wi-Fi",
