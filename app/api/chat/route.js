@@ -68,7 +68,7 @@ function getRelevantData(topic, dept) {
       break;
 
     case 'admissions':
-      out.admissions = VIT_DATA.admissions;
+      out.admissions = VIT_DATA.fy_admissions;
       break;
 
     case 'placements':
@@ -90,7 +90,7 @@ function getRelevantData(topic, dept) {
       break;
 
     case 'rankings':
-      out.rankings = VIT_DATA.rankings;
+      out.rankings = VIT_DATA.rankings_accreditation;
       out.college = { accreditation: VIT_DATA.college.accreditation, autonomous_since: VIT_DATA.college.autonomous_since };
       break;
 
@@ -99,7 +99,23 @@ function getRelevantData(topic, dept) {
       break;
 
     case 'international':
-      out.international = VIT_DATA.quick_links.international;
+      out.international = VIT_DATA.international_relations;
+      break;
+
+    case 'seda':
+      out.seda_dsy = VIT_DATA.dse_seda;
+      out.fees_note = VIT_DATA.fees.note;
+      break;
+
+    case 'pg':
+      out.pg_programs = VIT_DATA.pg_programs;
+      break;
+
+    case 'cutoffs':
+      out.cutoffs = VIT_DATA.cutoffs_mhtcet;
+      if (dept && VIT_DATA.cutoffs_mhtcet?.ay_2024_25_approx?.[dept]) {
+        out.specific_cutoff = { department: dept, cutoff: VIT_DATA.cutoffs_mhtcet.ay_2024_25_approx[dept] };
+      }
       break;
 
     default:
@@ -125,12 +141,21 @@ function buildFallbackResponse(message, topic, dept, data) {
   }
 
   switch (topic) {
-    case 'fees':
-      if (dept && data.department) {
-        return `💰 **Fees for ${data.department.name}:**\n\nApproximate tuition: **${VIT_DATA.fees.tuition_fee_approx}**\n\nFor precise fee details (which vary by academic year and category), please check:\n📋 [VIT Admissions Page](${VIT_DATA.admissions.admission_url})\n\n> Scholarships from Govt. of Maharashtra are available for eligible categories.`;
+    case 'fees': {
+      const bwFees = {}; const ay = VIT_DATA.fees.ay_2025_26; if(ay){for(const tier of Object.values(ay)){if(tier.branches && tier.first_year_fee){tier.branches.forEach(b=>bwFees[b.toLowerCase()]=tier.first_year_fee);}}}
+      if (dept && bwFees[dept]) {
+        const deptInfo = VIT_DATA.departments[dept];
+        return `💰 **Fees for ${deptInfo?.full_name || dept}:**\n\n• **First Year Fee:** ${bwFees[dept]}\n• Duration: ${deptInfo?.duration || '4 years'} | Seats: ${deptInfo?.seats || 'N/A'}\n\n**Scholarships available:**\n• TFWS: Only ₹10,000/year for top merit\n• SC/ST/OBC/EBC: Via MahaDBT portal\n\n📋 [Official Fee Structure](${VIT_DATA.fees.fee_structure_url})\n📧 ${VIT_DATA.fees.fee_contact}`;
       } else {
-        return `💰 **Fee Structure at VIT Pune:**\n\n${VIT_DATA.fees.tuition_fee_approx}\n\nFees vary by branch and academic year. For official, up-to-date fee details:\n📋 [VIT Admissions Page](${VIT_DATA.admissions.admission_url})\n📧 Contact: ${VIT_DATA.fees.fee_contact}`;
+        const feeGroups = {
+          'High-demand CS/IT branches (CE, IT, AI, ML, DS)': '₹6,24,165/year',
+          'IoT/Cyber Security, E&TC, Mechanical, Instrumentation': '₹4,18,165/year',
+          'Civil Engineering, Chemical Engineering': '₹2,12,165/year'
+        };
+        const feeList = Object.entries(feeGroups).map(([k,v]) => `• **${k}:** ${v}`).join('\n');
+        return `💰 **Fee Structure at VIT Pune (AY 2025-26):**\n\n${feeList}\n\n**TFWS:** Only ₹10,000/year for top merit students\n**Scholarships:** SC/ST/OBC/EBC via MahaDBT portal\n\n> Ask me about a specific branch for exact fees!\n📋 [Official Fee Structure](${VIT_DATA.fees.fee_structure_url})`;
       }
+    }
 
     case 'departments':
       if (dept && data.department) {
@@ -154,9 +179,9 @@ function buildFallbackResponse(message, topic, dept, data) {
       }
 
     case 'admissions': {
-      const a = VIT_DATA.admissions;
+      const a = VIT_DATA.fy_admissions;
       const docs = a.documents_required.slice(0, 4).join(', ');
-      return `📝 **Admissions at VIT Pune:**\n\n• Process: ${a.process}\n• Key docs: ${docs}...\n• For IL seats: Apply directly to VIT\n\n📄 [Download Brochure](${a.brochure_url})\n📋 [Admission Details](${a.admission_url})\n📢 [Notifications](${a.notification_url})`;
+      return `📝 **Admissions at VIT Pune:**\n\n• **FY B.Tech:** ${a.process}\n• **DSE/SEDA (Lateral):** Via MHT-CET Diploma + DSE CAP rounds\n• VIT College Code: **${a.vit_cap_code}**\n• Key docs: ${docs}...\n• ${a.il_quota}\n\n📄 [Download Brochure](${a.brochure})\n📋 [FY B.Tech Details](${a.url})\n📋 [DSE/SEDA Details](${VIT_DATA.dse_seda.url})\n📢 [Notifications](${a.notifications_url})`;
     }
 
     case 'placements': {
@@ -180,8 +205,36 @@ function buildFallbackResponse(message, topic, dept, data) {
     case 'exams':
       return `📅 **Examinations at VIT Pune:**\n\nVIT is an autonomous institute and conducts its own examinations.\n\n🔗 [Exam Timetable & Notifications](${VIT_DATA.examinations.url})\n📆 [Academic Calendar](${VIT_DATA.examinations.academic_calendar_url})`;
 
+    case 'seda': {
+      const s = VIT_DATA.dse_seda;
+      const intakeList = Object.entries(s.dse_branch_intake)
+        .sort((a,b) => b[1]-a[1])
+        .slice(0,6)
+        .map(([b,n]) => `• ${b}: ${n} seats`)
+        .join('\n');
+      return `🎓 **${s.official_name}**\n\n**What is DSE/SEDA?**\n${s.what_is_it}\n\n**Total DSE Intake:** ${s.total_dse_intake} seats\n\n**Top branches by seats:**\n${intakeList}\n\n**Eligibility:**\n• ${s.eligibility.qualification}\n• ${s.eligibility.marks}\n• Entrance: ${s.eligibility.entrance_exam}\n\n**Placements:** ${s.placements}\n\n📋 [Fee Structure PDF](${s.fee_pdf})\n🔗 [DSE Admission Details](${s.url})\n📢 [Notifications](${s.notification_url})`;
+    }
+
+    case 'pg': {
+      const pg = VIT_DATA.pg_programs;
+      const mtechList = pg.mtech.programs.map(p => `• ${p}`).join('\n');
+      return `🎓 **Postgraduate Programs at VIT Pune:**\n\n**M.Tech (2 years):**\n${mtechList}\nEligibility: ${pg.mtech.eligibility}\n\n**MCA (2 years):**\nEligibility: ${pg.mca.eligibility}\n\n**Ph.D:** Available across all major departments\n\n🔗 [PG Admissions](${pg.mtech.url})`;
+    }
+
+    case 'cutoffs': {
+      const c = VIT_DATA.cutoffs_mhtcet?.ay_2024_25_approx || {};
+      if (dept && c[dept]) {
+        return `📊 **MHT-CET Cutoff for ${dept.split(' ').map(w=>w[0].toUpperCase()+w.slice(1)).join(' ')}:**\n\n**2025 cutoff (Open category):** ${c[dept]}\n\n> ${c.note}\n\n🔗 [Official Admissions Page](${VIT_DATA.fy_admissions.url})`;
+      }
+      const topBranches = ['computer engineering','information technology',
+        'artificial intelligence and data science','computer science and engineering (ai & ml)',
+        'electronics and telecommunication','mechanical engineering'];
+      const list = topBranches.map(k => `• **${k.split(' ').map(w=>w[0].toUpperCase()+w.slice(1)).join(' ')}:** ${c[k] || 'N/A'}`).join('\n');
+      return `📊 **MHT-CET 2025 Cutoffs at VIT Pune (Open Category):**\n\n${list}\n\n> ${c.note}\n\n🔗 [Full Admission Details](${VIT_DATA.fy_admissions.url})`;
+    }
+
     case 'rankings':
-      return `🏆 **VIT Pune Rankings & Accreditation:**\n\n• ${VIT_DATA.college.accreditation}\n• ${VIT_DATA.college.status}\n\n🔗 [Rankings & Recognitions](${VIT_DATA.rankings.url})\n📊 [NIRF Data](${VIT_DATA.rankings.nirf_url})`;
+      return `🏆 **VIT Pune Rankings & Accreditation:**\n\n• ${VIT_DATA.college.accreditation}\n• ${VIT_DATA.college.status}\n\n🔗 [Rankings & Recognitions](${VIT_DATA.rankings_accreditation.url})\n📊 [NIRF Data](${VIT_DATA.rankings_accreditation.nirf.url})`;
 
     default:
       return `🤔 I can help you with:\n\n• **Courses & Departments** — All B.Tech programs at VIT\n• **Fees & Admissions** — Process, eligibility, documents\n• **Placements** — Stats, recruiters, TPO contact\n• **Exams** — Timetables, results, academic calendar\n• **Facilities** — Hostel, library, sports\n• **Contact** — Address, phone, email\n\nWhat would you like to know? 😊`;
