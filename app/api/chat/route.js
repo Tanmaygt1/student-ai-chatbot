@@ -136,21 +136,22 @@ function buildFallbackResponse(message, topic, dept, data) {
       if (dept && data.department) {
         const d = data.department;
         const highlights = d.highlights?.slice(0, 4).join(', ') || '';
-        return `🎓 **${d.full_name}**\n\n• Duration: ${d.duration} | Seats: ${d.seats}\n• Key subjects: ${highlights}\n• ${d.about}\n\n🔗 [Department Page](${d.url})`;
-      }  else {
-  const csKeys = ['computer engineering','computer engineering (software engineering)',
-    'computer science and engineering (ai)','computer science and engineering (ai & ml)',
-    'computer science and engineering (data science)',
-    'computer science and engineering (iot and cyber security)',
-    'artificial intelligence and data science','information technology'];
-  const coreKeys = ['electronics and telecommunication','mechanical engineering',
-    'civil engineering','chemical engineering','instrumentation engineering'];
-  const fmtGroup = (keys) => keys
-    .filter(k => VIT_DATA.departments[k])
-    .map(k => `• **${VIT_DATA.departments[k].full_name}** (${VIT_DATA.departments[k].seats} seats)`)
-    .join('\n');
-  return `🎓 **B.Tech Programs at VIT Pune:**\n\n**💻 Computer Science & IT:**\n${fmtGroup(csKeys)}\n\n**⚙️ Core Engineering:**\n${fmtGroup(coreKeys)}\n\n🔗 [All Departments](https://www.vit.edu/academics-at-vit/)\n\nAsk me about any specific branch for more details!`;
-}
+        return `🎓 **${d.full_name}**\n\n• Duration: ${d.duration} | Seats: ${d.seats}\n• Key subjects: ${highlights}\n• ${d.about}\n\n🔗 [Department Page](${d.url})\n\n💡 Want info on another branch? Just name it, or ask me to list all courses!`;
+      } else {
+        // Group departments by category for a clean, scannable response
+        const csKeys  = ['computer engineering','computer engineering (software engineering)',
+          'computer science and engineering (ai)','computer science and engineering (ai & ml)',
+          'computer science and engineering (data science)',
+          'computer science and engineering (iot and cyber security)',
+          'artificial intelligence and data science','information technology'];
+        const coreKeys = ['electronics and telecommunication','mechanical engineering',
+          'civil engineering','chemical engineering','instrumentation engineering'];
+        const fmtGroup = (keys) => keys
+          .filter(k => VIT_DATA.departments[k])
+          .map(k => `• **${VIT_DATA.departments[k].full_name}** (${VIT_DATA.departments[k].seats} seats)`)
+          .join('\n');
+        return `🎓 **B.Tech Programs at VIT Pune:**\n\n**💻 Computer Science & IT:**\n${fmtGroup(csKeys)}\n\n**⚙️ Core Engineering:**\n${fmtGroup(coreKeys)}\n\n🔗 [All Departments](https://www.vit.edu/academics-at-vit/)\n\nAsk me about any specific branch for more details!`;
+      }
 
     case 'admissions': {
       const a = VIT_DATA.admissions;
@@ -198,33 +199,44 @@ export async function POST(request) {
     }
 
     const userMsg = message.trim();
-const lowerMsg = userMsg.toLowerCase();
+    const lowerMsg = userMsg.toLowerCase();
 
-// Detect topic and department from message
-let topic = detectTopic(userMsg);
-let dept  = detectDept(userMsg);
+    // Detect topic and department from message
+    let topic = detectTopic(userMsg);
+    let dept  = detectDept(userMsg);
 
-// Detect "list all / other / more" intent — clears dept context
-const isBroadQuery = /\b(other|others|all|more|rest|list|every|what else|different|available|offered)\b/.test(lowerMsg)
-  || /\ball (courses|departments|branches|programs)\b/.test(lowerMsg)
-  || /\bwhat (courses|departments|branches|programs|other)\b/.test(lowerMsg);
+    // Detect "list all / other / more" intent — these should CLEAR dept context
+    const isBroadQuery = /\b(other|others|all|more|rest|list|every|what else|different|available|offered)\b/.test(lowerMsg)
+      || /\ball (courses|departments|branches|programs)\b/.test(lowerMsg)
+      || /\bwhat (courses|departments|branches|programs|other)\b/.test(lowerMsg);
 
-const pending = getPendingContext(sessionId);
+    // Context-awareness: resolve pending topic/dept from previous turn
+    const pending = getPendingContext(sessionId);
 
-if (isBroadQuery) {
-  dept = null;
-  clearPendingContext(sessionId);
-} else if (pending.topic && !topic && dept) {
-  topic = pending.topic;
-  clearPendingContext(sessionId);
-} else if (pending.dept && dept === null && !isBroadQuery) {
-  const isShortFollowUp = userMsg.split(' ').length <= 6;
-  if (isShortFollowUp) dept = pending.dept;
-}
+    if (isBroadQuery) {
+      // User wants a general list — ignore any stored dept context
+      dept = null;
+      clearPendingContext(sessionId);
+    } else if (pending.topic && !topic && dept) {
+      // User supplied a dept to resolve a previously pending topic (e.g. "CE" after "What are the fees?")
+      topic = pending.topic;
+      clearPendingContext(sessionId);
+    } else if (pending.dept && dept === null && !isBroadQuery) {
+      // Only inherit stored dept for clearly specific follow-ups (short messages like "tell me more", "what about fees")
+      const isShortFollowUp = userMsg.split(' ').length <= 6;
+      if (isShortFollowUp) dept = pending.dept;
+    }
 
-if (dept) setPendingContext(sessionId, { dept });
-if (topic && !dept) setPendingContext(sessionId, { topic });
-if (topic && dept) clearPendingContext(sessionId);
+    // If asking about departments/courses in general (no specific dept named), 
+    // always show the full list — never inherit a stale dept
+    if (topic === 'departments' && !detectDept(userMsg)) {
+      dept = null;
+    }
+
+    // Update stored context
+    if (dept) setPendingContext(sessionId, { dept });
+    if (topic && !dept) setPendingContext(sessionId, { topic });
+    if (topic && dept) clearPendingContext(sessionId);
 
     // Fetch relevant data slice
     const relevantData = getRelevantData(topic, dept);
