@@ -55,7 +55,8 @@
       "duration": "4 years",
       "fy_intake": 720,
       "dse_intake": 72,
-      "fees_fy": "₹6,24,165 (first year, Open category)",
+      "fees_fy_cap": "₹2,06,000/year (via CAP/State quota — most students)",
+"fees_fy_il": "₹6,24,165/year (Institute Level quota)",
       "eligibility": "12th PCM min 50% (45% reserved). MHT-CET / JEE Main.",
       "highlights": ["Data Structures & Algorithms", "Operating Systems", "Computer Networks", "Database Systems", "Machine Learning", "Cloud Computing", "Cyber Security", "Software Engineering"],
       "about": "VIT's flagship and largest department with 720 FY seats + 72 DSE seats. Consistently top placement record with highest package of ₹56 LPA. Strong coding culture, active technical clubs."
@@ -67,8 +68,8 @@
       "duration": "4 years",
       "fy_intake": 360,
       "dse_intake": 36,
-      "fees_fy": "₹6,24,165 (first year, Open category)",
-      "eligibility": "12th PCM min 50% (45% reserved). MHT-CET / JEE Main.",
+"fees_fy_cap": "₹2,06,000/year (via CAP/State quota — most students)",
+"fees_fy_il": "₹6,24,165/year (Institute Level quota)",      "eligibility": "12th PCM min 50% (45% reserved). MHT-CET / JEE Main.",
       "highlights": ["Web Technologies", "Database Management", "Software Testing", "System Administration", "Networking", "Cloud Computing"],
       "about": "Strong focus on practical IT skills with industry-driven curriculum and excellent placement outcomes."
     },
@@ -79,8 +80,8 @@
       "duration": "4 years",
       "fy_intake": 360,
       "dse_intake": 36,
-      "fees_fy": "₹6,24,165 (first year, Open category)",
-      "eligibility": "12th PCM min 50% (45% reserved). MHT-CET / JEE Main.",
+"fees_fy_cap": "₹2,06,000/year (via CAP/State quota — most students)",
+"fees_fy_il": "₹6,24,165/year (Institute Level quota)",      "eligibility": "12th PCM min 50% (45% reserved). MHT-CET / JEE Main.",
       "highlights": ["Artificial Intelligence", "Data Science", "Deep Learning", "Python", "Analytics", "Business Intelligence", "NLP"],
       "about": "Interdisciplinary program at the intersection of AI and data science. Very high industry demand."
     },
@@ -91,7 +92,8 @@
       "duration": "4 years",
       "fy_intake": 360,
       "dse_intake": 36,
-      "fees_fy": "₹6,24,165 (first year, Open category)",
+      "fees_fy_cap": "₹2,06,000/year (via CAP/State quota — most students)",
+"fees_fy_il": "₹6,24,165/year (Institute Level quota)",
       "eligibility": "12th PCM min 50% (45% reserved). MHT-CET / JEE Main.",
       "highlights": ["Artificial Intelligence", "Deep Learning", "Computer Vision", "NLP", "Reinforcement Learning", "Python"],
       "about": "Cutting-edge program integrating core CS with advanced AI specializations. One of the most sought-after branches."
@@ -103,7 +105,8 @@
       "duration": "4 years",
       "fy_intake": 360,
       "dse_intake": 36,
-      "fees_fy": "₹6,24,165 (first year, Open category)",
+      "fees_fy_cap": "₹2,06,000/year (via CAP/State quota — most students)",
+"fees_fy_il": "₹6,24,165/year (Institute Level quota)",
       "eligibility": "12th PCM min 50% (45% reserved). MHT-CET / JEE Main.",
       "highlights": ["Machine Learning", "AI Fundamentals", "Python", "Data Engineering", "MLOps", "Neural Networks"],
       "about": "CS fundamentals combined with AI and Machine Learning specialization — very high industry demand."
@@ -115,7 +118,8 @@
       "duration": "4 years",
       "fy_intake": 180,
       "dse_intake": 18,
-      "fees_fy": "₹6,24,165 (first year, Open category)",
+      "fees_fy_cap": "₹2,06,000/year (via CAP/State quota — most students)",
+"fees_fy_il": "₹6,24,165/year (Institute Level quota)",
       "eligibility": "12th PCM min 50% (45% reserved). MHT-CET / JEE Main.",
       "highlights": ["Data Science", "Statistics", "Big Data", "Data Visualization", "Business Intelligence", "Python/R"],
       "about": "Focused on data analysis, statistical computing, and modern data engineering pipelines."
@@ -127,7 +131,8 @@
       "duration": "4 years",
       "fy_intake": 180,
       "dse_intake": 18,
-      "fees_fy": "₹6,24,165 (first year, Open category)",
+      "fees_fy_cap": "₹2,06,000/year (via CAP/State quota — most students)",
+"fees_fy_il": "₹6,24,165/year (Institute Level quota)",
       "eligibility": "12th PCM min 50% (45% reserved). MHT-CET / JEE Main.",
       "highlights": ["Software Engineering", "Agile & Scrum", "DevOps", "Full Stack Development", "Cloud Architecture", "Software Testing"],
       "about": "Specialized branch focused on full software development lifecycle, agile methods, and industry-ready practices."
@@ -139,7 +144,8 @@
       "duration": "4 years",
       "fy_intake": 180,
       "dse_intake": 18,
-      "fees_fy": "₹4,18,165 (first year, Open category)",
+      "fees_fy_cap": "₹2,06,000/year (via CAP/State quota — most students)",
+"fees_fy_il": "₹4,18,165/year (Institute Level quota)",
       "eligibility": "12th PCM min 50% (45% reserved). MHT-CET / JEE Main.",
       "highlights": ["IoT", "Cyber Security", "Blockchain Technology", "Embedded Systems", "Network Security"],
       "about": "Specialized in connected systems, security, and blockchain. Rapidly growing industry demand."
@@ -151,7 +157,8 @@
       "duration": "4 years",
       "fy_intake": 120,
       "dse_intake": 36,
-      "fees_fy": "₹4,18,165 (first year, Open category)",
+      "fees_fy_cap": "₹2,06,000/year (via CAP/State quota — most students)",
+"fees_fy_il": "₹4,18,165/year (Institute Level quota)",
       "eligibility": "12th PCM min 50% (45% reserved). MHT-CET / JEE Main.",
       "highlights": ["VLSI Design", "Signal Processing", "Embedded Systems", "Communication Systems", "IoT", "Microcontrollers"],
       "about": "One of VIT's oldest and most respected departments with strong research output and core industry ties."
@@ -163,7 +170,8 @@
       "duration": "4 years",
       "fy_intake": 120,
       "dse_intake": 36,
-      "fees_fy": "₹4,18,165 (first year, Open category)",
+      "fees_fy_cap": "₹2,06,000/year (via CAP/State quota — most students)",
+"fees_fy_il": "₹4,18,165/year (Institute Level quota)",
       "eligibility": "12th PCM min 50% (45% reserved). MHT-CET / JEE Main.",
       "highlights": ["CAD/CAM", "Robotics", "Thermodynamics", "Manufacturing Technology", "Finite Element Analysis", "Automobile Engineering"],
       "about": "Comprehensive program with strong lab infrastructure. Core industry placements with companies like Cummins, Bajaj Auto, KPIT."
@@ -175,7 +183,8 @@
       "duration": "4 years",
       "fy_intake": 60,
       "dse_intake": 0,
-      "fees_fy": "₹2,12,165 (first year, Open category)",
+      "fees_fy_cap": "₹2,12,165/year (via CAP/State quota — most students)",
+      "fees_fy_il": "₹4,24,330/year (Institute Level quota)",
       "eligibility": "12th PCM min 50% (45% reserved). MHT-CET / JEE Main.",
       "highlights": ["Process Engineering", "Thermodynamics", "Fluid Mechanics", "Chemical Reaction Engineering", "Industrial Chemistry"],
       "about": "One of the few colleges in Pune offering a dedicated Chemical Engineering program. Strong process industry placements."
@@ -187,7 +196,8 @@
       "duration": "4 years",
       "fy_intake": 60,
       "dse_intake": 6,
-      "fees_fy": "₹2,12,165 (first year, Open category)",
+      "fees_fy_cap": "₹2,12,165/year (via CAP/State quota — most students)",
+      "fees_fy_il": "₹4,24,330/year (Institute Level quota)",
       "eligibility": "12th PCM min 50% (45% reserved). MHT-CET / JEE Main.",
       "highlights": ["Structural Engineering", "Construction Management", "AutoCAD", "Environmental Engineering", "Geotechnical Engineering"],
       "about": "Strong infrastructure with practitioner faculty. Lowest fees among VIT branches."
@@ -199,7 +209,8 @@
       "duration": "4 years",
       "fy_intake": 60,
       "dse_intake": 18,
-      "fees_fy": "₹4,18,165 (first year, Open category)",
+      "fees_fy_cap": "₹2,06,000/year (via CAP/State quota — most students)",
+      "fees_fy_il": "₹4,18,165/year (Institute Level quota)",
       "eligibility": "12th PCM min 50% (45% reserved). MHT-CET / JEE Main.",
       "highlights": ["Control Systems", "Process Instrumentation", "PLC/SCADA", "Sensors & Transducers", "Industrial Automation"],
       "about": "Niche program with excellent industry demand in automation and process control sectors."
@@ -304,20 +315,24 @@
   "fees": {
     "note": "Fees are per academic year, regulated by Fees Regulating Authority (FRA), Maharashtra. Subject to revision. Always verify latest at https://www.vit.edu/undergraduate/",
     "ay_2025_26": {
-      "high_demand_cs_it": {
-        "branches": ["Computer Engineering", "IT", "AI & DS", "CSE-AI", "CSE-AIML", "CS-DS", "CE-SE"],
-        "first_year_fee": "₹6,24,165",
-        "note": "Highest fee tier — premium CS/AI branches"
-      },
-      "mid_tier": {
-        "branches": ["CSE-IoT & Cyber Security", "Electronics & Telecomm.", "Mechanical", "Instrumentation"],
-        "first_year_fee": "₹4,18,165"
-      },
-      "core_engineering": {
-        "branches": ["Civil Engineering", "Chemical Engineering"],
-        "first_year_fee": "₹2,12,165",
-        "note": "Lowest fee tier"
-      }
+  "high_demand_cs_it": {
+    "branches": ["Computer Engineering", "IT", "AI & DS", "CSE-AI", "CSE-AIML", "CS-DS", "CE-SE"],
+    "cap_fee": "₹2,06,000 (approx, via CAP/State quota)",
+    "il_fee": "₹6,24,165 (Institute Level quota)",
+    "note": "CAP fees are regulated by FRA and significantly lower than IL fees"
+  },
+  "mid_tier": {
+    "branches": ["CSE-IoT & Cyber Security", "Electronics & Telecomm.", "Mechanical", "Instrumentation"],
+    "cap_fee": "₹1,40,000 (approx, via CAP/State quota)",
+    "il_fee": "₹4,18,165 (Institute Level quota)"
+  },
+  "core_engineering": {
+    "branches": ["Civil Engineering", "Chemical Engineering"],
+    "cap_fee": "₹72,000 (approx, via CAP/State quota)",
+    "il_fee": "₹2,12,165 (Institute Level quota)",
+    "note": "Lowest fee tier"
+  }
+
     },
     "tfws": {
       "name": "Tuition Fee Waiver Scheme (TFWS)",

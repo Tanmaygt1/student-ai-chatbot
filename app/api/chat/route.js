@@ -48,7 +48,8 @@ function getRelevantData(topic, dept) {
           name: VIT_DATA.departments[dept].full_name,
           seats: VIT_DATA.departments[dept].fy_intake,
           duration: VIT_DATA.departments[dept].duration,
-          fees_fy: VIT_DATA.departments[dept].fees_fy
+          fees_fy_cap: VIT_DATA.departments[dept].fees_fy_cap,
+fees_fy_il: VIT_DATA.departments[dept].fees_fy_il,
         };
       } else {
         out.all_departments = Object.entries(VIT_DATA.departments).reduce((acc, [k, v]) => {
@@ -155,6 +156,7 @@ function buildFallbackResponse(message, topic, dept, data) {
         const ay = VIT_DATA.fees.ay_2025_26;
         return `💰 **Fee Structure at VIT Pune (AY 2025-26):**\n\n• **CS/IT branches** (CE, IT, AI, ML, DS, SE): **${ay.high_demand_cs_it.first_year_fee}**/year\n• **Mid-tier branches** (IoT, E&TC, Mechanical, Instrumentation): **${ay.mid_tier.first_year_fee}**/year\n• **Core branches** (Civil, Chemical): **${ay.core_engineering.first_year_fee}**/year\n\n**TFWS:** Only ₹10,000/year for top merit students\n**Scholarships:** SC/ST/OBC/EBC via MahaDBT portal\n\n> Ask me about a specific branch for exact fees!\n📋 [Official Fee Structure](${VIT_DATA.fees.fee_structure_url})`;
       }
+      return `💰 **Fees for ${deptInfo.full_name}:**\n\n• **CAP/State Quota Fee:** ${deptInfo.fees_fy_cap} ← most students pay this\n• **IL Quota Fee:** ${deptInfo.fees_fy_il}\n• Duration: ${deptInfo.duration} | Seats: ${deptInfo.fy_intake}\n\n**Scholarships:**\n• TFWS: Only ₹10,000/year for top merit\n• SC/ST/OBC/EBC: Via MahaDBT portal\n\n📋 [Official Fee Structure](${VIT_DATA.fees.fee_structure_url})\n📧 ${VIT_DATA.fees.fee_contact}`;
     }
 
     case 'departments':
