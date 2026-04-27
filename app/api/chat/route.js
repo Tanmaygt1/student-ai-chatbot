@@ -32,7 +32,6 @@ try {
   VIT_DATA = { college: { name: 'VIT Pune' }, departments: {}, placements: {} };
 }
 
-// ── Fetch relevant data slice for a query ──────────────────
 function getRelevantData(topic, dept) {
   const out = {};
   if (!topic) {
